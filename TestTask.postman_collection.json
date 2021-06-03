@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "7d9579b6-8f9f-43f6-bffb-30c73f7833f9",
+		"name": "TestTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Test\",\n    \"address1\": \"Example address\",\n    \"address2\": \"Another Example address\",\n    \"city\": \"Boston\",\n    \"state\": \"Massachusetts(MA)\",\n    \"country\": \"USA\",\n    \"zipCode\": \"02118\",\n    \"phoneNo1\": \"555-666-7777\",\n    \"phoneNo2\": \"111-222-3333\",\n    \"user\": {\n        \"firstName\": \"Mike\",\n        \"lastName\": \"Chudesnov\",\n        \"email\": \"test+3@email.com\",\n        \"password\": \"simplepass\",\n        \"passwordConfirmation\": \"simplepass\",\n        \"phone\": \"000-000-0000\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "longitude",
+							"value": "-77.4291298",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/accounts?sort=created_at&desc=false",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "created_at"
+						},
+						{
+							"key": "desc",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
