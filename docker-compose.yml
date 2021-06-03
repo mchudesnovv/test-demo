@@ -41,6 +41,12 @@ services:
       - ./docker-compose/nginx:/etc/nginx/conf.d
     networks:
       - app-network
+  redis:
+    image: redis
+    container_name: redis
+    restart: unless-stopped
+    networks:
+      - app-network
 networks:
   app-network:
     driver: bridge
